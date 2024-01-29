@@ -1,0 +1,15 @@
+https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-app-service/7-create-html-web-app
+
+mkdir htmlapp
+
+cd htmlapp
+
+git clone https://github.com/Azure-Samples/html-docs-hello-world.git
+
+resourceGroup=$(az group list --query "[].{id:name}" -o tsv) appName=az204app$RANDOM
+
+cd html-docs-hello-world
+
+az webapp up -g $resourceGroup -n $appName --html
+
+az webapp up -g $resourceGroup -n $appName --html 
